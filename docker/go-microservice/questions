@@ -1,0 +1,13 @@
+for the following dockerfile how big will the image be?
+
+FROM scratch
+copy ./5gbfile.txt .
+(the file 5gbfile.txt has a size of 5 gb)
+
+for the following dockerfile how big will the image be?
+
+FROM scratch
+copy ./5gbfile.txt .
+run rm ./5gbfile.txt
+(the rm command would not be avialable in this container because it starts from scratch but image that it is available)
+
