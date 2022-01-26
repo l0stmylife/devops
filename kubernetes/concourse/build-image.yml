@@ -1,6 +1,6 @@
 resources:
 # The repo with our Dockerfile
-- name: concourse-examples
+- name: py-repo
   type: git
   icon: github
   source:
@@ -12,14 +12,15 @@ resources:
   type: registry-image
   icon: docker
   source:
-    repository: ((image-repo-name))/simple-image
+    repository: ((image-repo-name))/py-microservice
     username: ((registry-username))
     password: ((registry-password))
+    tag: latest
 
 jobs:
 - name: build-and-push
   plan:
-  - get: concourse-examples
+  - get: py-repo
   - task: build-task-image
     privileged: true
     config:
@@ -29,10 +30,13 @@ jobs:
         source:
           repository: vito/oci-build-task
       inputs:
-      - name: concourse-examples
+      - name: py-repo
       outputs:
       - name: image
       run:
         path: build
       params:
-        CONTEXT: concourse-examples/Dockerfiles/simple
+        CONTEXT: py-repo/docker/python-microservice
+  - put: simple-image
+    params:
+      image: image/image.tar
