@@ -1,0 +1,7 @@
+docker is een tool om images te maken en om containers te runnen
+
+een image is een read only file systeem dat aangemaakt word door een dockerfile
+
+elk commando in een dockerfile voegt een layer toe
+
+daarna word een diff gemaakt met de vorige layer

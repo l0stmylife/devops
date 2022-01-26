@@ -4,7 +4,7 @@ WORKDIR /src
 RUN go build -o go-hello .
 
 # final stage
-FROM alpine
+FROM scratch
 WORKDIR /app
 COPY --from=build-env /src/go-hello /app/
 ENTRYPOINT ./go-hello
