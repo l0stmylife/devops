@@ -17,6 +17,7 @@ jobs:
   - set_pipeline: self
     file: parent-repo/kubernetes/concourse/parent.yaml
 
+#set an example pipeline
 - name: set-example-pipelines
   public: true
   plan:
