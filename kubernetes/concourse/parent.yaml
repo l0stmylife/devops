@@ -2,7 +2,7 @@ resources:
 - name: concourse-examples
   type: git
   icon: github
-  check_every: 30m
+  check_every: 1m
   source:
     uri: https://github.com/l0stmylife/devops.git
     branch: main
