@@ -5,6 +5,7 @@ resources:
   check_every: 30m
   source:
     uri: https://github.com/l0stmylife/devops.git
+    branch: main
 
 jobs:
 # update this pipeline before updating child pipelines
