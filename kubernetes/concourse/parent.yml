@@ -24,8 +24,8 @@ jobs:
   - get: parent-repo
     trigger: true
     passed: [set-self]
-  - set_pipeline: job
-    file: parent-repo/kubernetes/concourse/hello-world.yml
+  - set_pipeline: python-microservice
+    file: parent-repo/kubernetes/concourse/build-image.yml
     # vars:
     #   first: initial
     #   number: "9000"
