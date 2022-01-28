@@ -1,0 +1,21 @@
+helm repo add concourse https://concourse-charts.storage.googleapis.com/
+helm install concourse concourse/concourse
+
+kubectl port-forward concourse-web-6dcd646fd9-q5ckj 8080:8080
+
+fly -t tutorial login -c http://localhost:8080 -u test -p test
+
+
+fly -t tutorial set-pipeline -p hello-world -c hello-world.yml
+fly -t tutorial unpause-pipeline -p hello-world
+
+visit ui to run pipeline
+
+
+for the build-image pipeline the set-pipeline command needs some variables
+(we don't want to store them in git)
+fly -t <target> set-pipeline -p build-and-push-image \
+    -c ./examples/pipelines/build-and-push-simple-image.yml \
+    --var image-repo-name=<repo-name> \
+    --var registry-username=<user> \
+    --var registry-password=<password>
