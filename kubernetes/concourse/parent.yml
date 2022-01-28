@@ -15,7 +15,7 @@ jobs:
   - get: parent-repo
     trigger: true
   - set_pipeline: self
-    file: parent-repo/kubernetes/concourse/parent.yaml
+    file: parent-repo/kubernetes/concourse/parent.yml
 
 #set an example pipeline
 - name: set-example-pipelines
