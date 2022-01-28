@@ -15,7 +15,7 @@ jobs:
   - get: concourse-examples
     trigger: true
   - set_pipeline: self
-    file: concourse-examples/parent-pipeline/parent.yaml
+    file: concourse-examples/parent.yaml
 
 - name: set-example-pipelines
   public: true
@@ -24,7 +24,7 @@ jobs:
     trigger: true
     passed: [set-self]
   - set_pipeline: job
-    file: concourse-examples/pipelines/hello-world.yml
+    file: concourse-examples/hello-world.yml
     # vars:
     #   first: initial
     #   number: "9000"
