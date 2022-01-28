@@ -14,8 +14,8 @@ resources:
   icon: docker
   source:
     repository: lostmylife/py-microservice
-    username: ((registry-username))
-    password: ((registry-password))
+    username: ((registry-username.username))
+    password: ((registry-password.password))
     tag: latest
 
 jobs:
