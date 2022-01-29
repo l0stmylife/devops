@@ -1,3 +1,5 @@
 type nodeport doesn not work with docker desktop
 
 use minikube tunnel for loadbalancer to opbtain an ip
+
+kubectl run -i --tty busyboxcurl2 --image=radial/busyboxplus:curl -- sh
