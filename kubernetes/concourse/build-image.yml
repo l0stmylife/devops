@@ -8,7 +8,7 @@ resources:
     uri: https://github.com/l0stmylife/devops.git
     branch: main
     paths:
-    - docker/*
+    - docker/**
 
 # Where we will push the image to
 - name: simple-image
