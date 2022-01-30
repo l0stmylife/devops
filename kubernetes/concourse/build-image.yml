@@ -1,6 +1,6 @@
 #this pipeline is triggered by changes to the tracked git repo. the docker username and password must be passed as arguments to fly set to not expose secrets in git
 resources:
-# The repo with our Dockerfile and code
+# The repo with our Dockerfile and code dummy
 - name: py-repo
   type: git
   icon: github
