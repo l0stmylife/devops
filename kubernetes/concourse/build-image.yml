@@ -7,6 +7,8 @@ resources:
   source:
     uri: https://github.com/l0stmylife/devops.git
     branch: main
+    paths:
+    - docker/python-microservice/*
 
 # Where we will push the image to
 - name: simple-image
