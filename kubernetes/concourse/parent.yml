@@ -6,6 +6,8 @@ resources:
   source:
     uri: https://github.com/l0stmylife/devops.git
     branch: main
+    paths:
+    - kubernetes/concourse/**
 
 jobs:
 # update this pipeline before updating child pipelines
